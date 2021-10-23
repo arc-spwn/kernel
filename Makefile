@@ -15,7 +15,7 @@ setup-env:
 flash:
 ifdef DRIVE 
 	@echo "flashing to /dev/$(DRIVE)" 
-	dd if=target/x86_64-baremetal/bootimage-kernel.bin of=/dev/$(DRIVE)
+	dd if=target/x86_64-baremetal/debug/bootimage-kernel.bin of=/dev/$(DRIVE)
 else 
 	@echo "DRIVE wasnt found, go into your Makefile and set DRIVE to your drives name (no /dev/ prefix)"
 endif 
