@@ -1,4 +1,4 @@
-# rust-kernel
+# arc-kernel
 a funny rust kernel that can use the `println!` and `panic!` macros.
 
 ## requirements
