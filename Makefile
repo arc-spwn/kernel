@@ -1,5 +1,8 @@
 .PHONY: all
-	all: compile
+	all: amogus
+
+amogus:
+	@echo ඞ amogus
 
 
 compile:
