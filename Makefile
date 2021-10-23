@@ -1,5 +1,3 @@
-DRIVE = "sdb"
-
 .PHONY: all
 	all: compile
 
