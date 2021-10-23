@@ -1,5 +1,8 @@
+
 .PHONY: all
 	all: compile
+
+
 compile:
 	cargo bootimage
 
@@ -9,3 +12,10 @@ setup-env:
 	rustup component add llvm-tools-preview --toolchain nightly
 	rustup default nightly
 	cargo install bootimage
+
+flash:
+ifdef DRIVE 
+	@echo "flashing to /dev/$(DRIVE)" 
+else 
+	@echo "DRIVE wasnt found, go into your Makefile and set DRIVE to your drives name (no /dev/ prefix)"
+endif 
