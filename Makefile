@@ -19,3 +19,6 @@ ifdef DRIVE
 else 
 	@echo "DRIVE wasnt found, go into your Makefile and set DRIVE to your drives name (no /dev/ prefix)"
 endif 
+
+qemu:
+	qemu-system-x86_64 ./target/x86_64-baremetal/debug/bootimage-kernel.bin

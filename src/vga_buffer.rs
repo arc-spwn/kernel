@@ -147,3 +147,9 @@ macro_rules! println {
     () => ($crate::print!("\n"));
     ($($arg:tt)*) => ($crate::print!("{}\n", format_args!($($arg)*)));
 }
+
+pub fn clear_scr() {
+    for row in 1..BUFFER_HEIGHT {
+        WRITER.lock().clear_row(row);
+    }
+}
