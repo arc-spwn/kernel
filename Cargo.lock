@@ -26,9 +26,11 @@ version = "0.1.0"
 dependencies = [
  "bootloader",
  "lazy_static",
- "ps2",
+ "pic8259",
  "spin",
+ "uart_16550",
  "volatile 0.2.7",
+ "x86_64",
 ]
 
 [[package]]
@@ -41,12 +43,11 @@ dependencies = [
 ]
 
 [[package]]
-name = "ps2"
-version = "0.2.0"
+name = "pic8259"
+version = "0.10.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dfef03bb1362e6a23a211efe8c72e2eeb6888f51fb329cdfa07bb470986ea7d0"
+checksum = "24ec21f514e2e16e94649f1d041ca4a7069b512c037ac156360652a775e6229d"
 dependencies = [
- "bitflags",
  "x86_64",
 ]
 
@@ -55,6 +56,16 @@ name = "spin"
 version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6e63cff320ae2c57904679ba7cb63280a3dc4613885beafb148ee7bf9aa9042d"
+
+[[package]]
+name = "uart_16550"
+version = "0.2.15"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "65ad019480ef5ff8ffe66d6f6a259cd87cf317649481394981db1739d844f374"
+dependencies = [
+ "bitflags",
+ "x86_64",
+]
 
 [[package]]
 name = "volatile"

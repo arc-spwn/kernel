@@ -24,4 +24,18 @@ else
 endif 
 
 qemu:
-	qemu-system-x86_64 ./target/x86_64-baremetal/debug/bootimage-kernel.bin
+	cargo run
+
+run:
+	cargo run
+
+r:
+	cargo run
+
+test:
+	cargo t
+
+t:
+	cargo t
+
+
