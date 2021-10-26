@@ -34,12 +34,7 @@ pub extern "C" fn _start() -> ! {
     print!("loading idt and gdt...");
     kernel::init();
     println!(" [ok]");
-
-    fn stack_overflow() {
-        stack_overflow();
-    }
-
-    stack_overflow();
+    
     vga_buffer::clear_scr();
 
     println!("
