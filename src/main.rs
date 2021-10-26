@@ -11,16 +11,18 @@ mod vga_buffer;
 mod serial;
 mod interrupts;
 mod gdt;
+mod keyboard;
 
 use core::panic::PanicInfo;
 
 use kernel::test_runner;
+use kernel::hlt_loop;
 
 // panic handler
 #[panic_handler]
 fn panic(info: &PanicInfo) -> ! {
     println!("{}", info);
-    loop { }
+    hlt_loop();
 }
 
 #[no_mangle]
@@ -31,10 +33,9 @@ pub extern "C" fn _start() -> ! {
 
     // diffrent keyboard system soon tm
 
-    print!("loading idt and gdt...");
     kernel::init();
-    println!(" [ok]");
     
+    #[cfg(not(debug_assertions))]
     vga_buffer::clear_scr();
 
     println!("
@@ -51,5 +52,6 @@ pub extern "C" fn _start() -> ! {
                               ");
 
     println!("Arc loaded.");
-    loop { }
+
+    hlt_loop();
 }
