@@ -1,5 +1,4 @@
 use crate::{gdt, println, print, serial_print};
-use crate::keyboard::set_last_key;
 
 use lazy_static::lazy_static;
 
@@ -92,7 +91,7 @@ extern "x86-interrupt" fn keyboard_interrupt_handler(_stack_frame: InterruptStac
     if let Ok(Some(key_event)) = keyboard.add_byte(scancode) {
         if let Some(key) = keyboard.process_keyevent(key_event) {
             match key {
-                DecodedKey::Unicode(character) => {print!("{}", character); set_last_key(character)},
+                DecodedKey::Unicode(character) => {print!("{}", character);},
                 DecodedKey::RawKey(key) => {print!("{:?}", key)},
             }
         }
