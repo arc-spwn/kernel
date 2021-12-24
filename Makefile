@@ -9,9 +9,9 @@ compile:
 	cargo bootimage
 
 setup-env:
-	rustup install nightly
-	rustup component add rust-src --toolchain nightly
-	rustup component add llvm-tools-preview --toolchain nightly
+	rustup install nightly-2021-09-09
+	rustup component add rust-src --toolchain nightly-2021-09-09
+	rustup component add llvm-tools-preview --toolchain nightly-2021-09-09
 	cargo install bootimage
 
 flash:
