@@ -1,8 +1,13 @@
-# arc-kernel
-a funny rust kernel that can use the `println!` and `panic!` macros.
+# Arc Kernel
+Arc's kernel written in Rust
 
-## requirements
-if u have rustup installed you can run `make setup-env` to download all the stuff you need **WARNING: this will set nightly as your default toolchain, if you dont want this, run `rustup default stable` after you compiled the kernel**
+## Requirements
+- Linux *At the moment.*
+- Rustup
+- Rust's nightly toolchain. *Can be installed by `make setup-env`.*
+- Cargo bootimage *Can be installed by `make setup-env`.*
 
-## building
-just run `make compile` lol
+## Building
+- If you don't have the last two requirements already installed.
+    - Run `make setup-env`.
+- Run `make compile`.
